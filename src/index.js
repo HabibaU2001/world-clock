@@ -24,6 +24,29 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  let hongKongElement = document.querySelector("#hong-kong");
+  if (hongKongElement) {
+    let hongKongDateElement = hongKongElement.querySelector(".date");
+    let hongKongTimeElement = hongKongElement.querySelector(".time");
+    let hongKongTime = moment().tz("Asia/Hong_Kong");
+
+    hongKongDateElement.innerHTML = hongKongTime.format("MMMM	Do YYYY");
+    hongKongTimeElement.innerHTML = hongKongTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+  let qatarElement = document.querySelector("#qatar");
+  if (qatarElement) {
+    let qatarDateElement = qatarElement.querySelector(".date");
+    let qatarTimeElement = qatarElement.querySelector(".time");
+    let qatarTime = moment().tz("Asia/Qatar");
+
+    qatarDateElement.innerHTML = qatarTime.format("MMMM	Do YYYY");
+    qatarTimeElement.innerHTML = qatarTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
